@@ -1,0 +1,16 @@
+== BeIndexed matcher
+
+BeIndexed matcher is a custom RSpec matcher for RubyOnRails Ultrasphinx indexation plugin.
+
+Currently only :field and :delta options are supported by the matcher.
+
+Spec examples:
+    MyModel.should be_indexed
+    MyModel.should be_indexed.using_fields([:column1, :column2])
+    MyModel.should be_indexed.with_delta
+    MyModel.should be_indexed.with_delta(:field => 'last_modified') 
+    MyModel.should be_indexed.using_fields(:column1).with_delta
+
+
+== Thanks
+To the community...
