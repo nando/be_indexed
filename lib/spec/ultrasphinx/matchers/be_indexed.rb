@@ -38,7 +38,10 @@ module Spec
           else
             @alert = "#{@target} expected to be indexed"
           end
-          @alert.nil?
+        rescue
+          @alert = "be_indexed matcher error: have you rake db:migrate and db:test:prepare?\n" + $!
+        ensure
+          return @alert.nil?
         end
 
         def failure_message
